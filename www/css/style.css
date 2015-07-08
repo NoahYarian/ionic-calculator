@@ -1,1 +1,86 @@
 /* Empty. Add your own CSS if you like */
+ion-content {
+  background: black;
+}
+
+.row {
+  height: 79px;
+}
+
+.col {
+  border: 1px solid black;
+  background: white;
+  text-align: center;
+}
+
+.result, .num {
+  font-weight: bold;
+}
+
+.result {
+  font-size: 4em;
+  text-align: right;
+  padding-top: 22px;
+  padding-right: 11px;
+}
+
+.num {
+  font-size: 4.2em;
+  padding-top: 12px;
+}
+
+.sqrt, .sqr {
+  background: #589EFF;
+  font-size: 2.2em;
+}
+
+.sqr {
+  padding-top: 15px;
+}
+
+.sqrt {
+  padding-top: 13px;
+}
+
+.sqrt div {
+  display: inline-block;
+}
+
+.sqrt-left {
+  margin-left: 10px;
+}
+
+.sqrt-right {
+  position: relative;
+  left: -11px;
+  top: 4px;
+  text-decoration: overline;
+}
+
+.trig {
+  background: yellow;
+  font-size: 2.2em;
+  padding-top: 13px;
+}
+
+.arith {
+  background: #f70;
+  font-size: 4em;
+  padding-top: 13px;
+}
+
+.dec {
+  font-size: 4em;
+}
+
+.clear {
+  background: red;
+  font-size: 3em;
+  padding-top: 10px;
+}
+
+.equals {
+  background: #00A700;
+  font-size: 4em;
+  padding-top: 10px;
+}
