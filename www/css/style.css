@@ -77,10 +77,12 @@ ion-content {
   background: red;
   font-size: 3em;
   padding-top: 10px;
+  color: white;
 }
 
 .equals {
   background: #00A700;
   font-size: 4em;
   padding-top: 10px;
+  color: white;
 }

@@ -29,49 +29,49 @@
       </ion-header-bar>
       <ion-content>
         <div class="row">
-          <div class="col result">80085</div>
+          <div class="col result" ng-model="result">{{result}}</div>
         </div>
         <div class="row">
-          <div class="col button sqr">x<sup>2</sup></div>
-          <div class="col button trig">sin</div>
-          <div class="col button trig">cos</div>
-          <div class="col button trig">tan</div>
+          <div class="col button sqr" ng-click="sqr(true)">x<sup>2</sup></div>
+          <div class="col button trig" ng-click="trig('sin', true)">sin</div>
+          <div class="col button trig" ng-click="trig('cos', true)">cos</div>
+          <div class="col button trig" ng-click="trig('tan', true)">tan</div>
         </div>
         <div class="row">
-          <div class="col button sqrt">
+          <div class="col button sqrt" ng-click="sqr(false)">
             <div class="sqrt-left">√</div>
             <div class="sqrt-right">&nbsp;x&nbsp;</div>
           </div>
-          <div class="col button trig">sin<sup>-1</sup></div>
-          <div class="col button trig">cos<sup>-1</sup></div>
-          <div class="col button trig">tan<sup>-1</sup></div>
+          <div class="col button trig" ng-click="trig('sin', false)">sin<sup>-1</sup></div>
+          <div class="col button trig" ng-click="trig('cos', false)">cos<sup>-1</sup></div>
+          <div class="col button trig" ng-click="trig('tan', false)">tan<sup>-1</sup></div>
         </div>
         <div class="row">
-          <div class="col button num">1</div>
-          <div class="col button num">2</div>
-          <div class="col button num">3</div>
-          <div class="col button arith">÷</div>
+          <div class="col button num" ng-click="digit(1)">1</div>
+          <div class="col button num" ng-click="digit(2)">2</div>
+          <div class="col button num" ng-click="digit(3)">3</div>
+          <div class="col button arith" ng-click="arith('div')">÷</div>
         </div>
         <div class="row">
-          <div class="col button num">4</div>
-          <div class="col button num">5</div>
-          <div class="col button num">6</div>
-          <div class="col button arith">×</div>
+          <div class="col button num" ng-click="digit(4)">4</div>
+          <div class="col button num" ng-click="digit(5)">5</div>
+          <div class="col button num" ng-click="digit(6)">6</div>
+          <div class="col button arith" ng-click="arith('mult')">×</div>
         </div>
         <div class="row">
-          <div class="col button num">7</div>
-          <div class="col button num">8</div>
-          <div class="col button num">9</div>
-          <div class="col button arith">+</div>
+          <div class="col button num" ng-click="digit(7)">7</div>
+          <div class="col button num" ng-click="digit(8)">8</div>
+          <div class="col button num" ng-click="digit(9)">9</div>
+          <div class="col button arith" ng-click="arith('sub')">-</div>
         </div>
         <div class="row">
-          <div class="col col-50 button num">0</div>
-          <div class="col button dec">.</div>
-          <div class="col button arith">-</div>
+          <div class="col col-50 button num" ng-click="digit(0)">0</div>
+          <div class="col button dec" ng-click="digit('.')">.</div>
+          <div class="col button arith" ng-click="arith('add')">+</div>
         </div>
         <div class="row">
-          <div class="col button clear">clear</div>
-          <div class="col button equals">=</div>
+          <div class="col button clear" ng-click="clear()">clear</div>
+          <div class="col button equals" ng-click="equals()">=</div>
         </div>
       </ion-content>
     </ion-pane>
