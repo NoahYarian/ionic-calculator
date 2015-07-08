@@ -20,10 +20,32 @@ angular.module('starter', ['ionic'])
         }
         $scope.secondOperandStarted = true;
       } else {
+        if ($scope.result.length < 10) {
+          if (value === ".") {
+            if ($scope.result.indexOf(".") === -1) {
+              $scope.result += value.toString();
+            }
+          } else {
+            if ($scope.result === "0") {
+              $scope.result = value.toString();
+            } else {
+              $scope.result += value.toString();
+            }
+          }
+        }
+      }
+    } else {
+      if ($scope.result.length < 10) {
         if (value === ".") {
           if ($scope.result.indexOf(".") === -1) {
-            $scope.result += value.toString();
+            // if ($scope.result === "-") {
+            //   $scope.result = "-0.";
+            // } else {
+              $scope.result += ".";
+            // }
           }
+        // } else if (value === "-" && $scope.result === "0") {
+        //   $scope.result = "-";
         } else {
           if ($scope.result === "0") {
             $scope.result = value.toString();
@@ -32,24 +54,16 @@ angular.module('starter', ['ionic'])
           }
         }
       }
-    } else {
-      if (value === ".") {
-        if ($scope.result.indexOf(".") === -1) {
-          $scope.result += value.toString();
-        }
-      } else {
-        if ($scope.result === "0") {
-          $scope.result = value.toString();
-        } else {
-          $scope.result += value.toString();
-        }
-      }
     }
   }
 
   $scope.arith = function(type) {
-    $scope.firstOperand = +$scope.result;
-    $scope.operator = type;
+    // if (type === "sub" && ($scope.result === "0" || $scope.operator)) {
+    //   $scope.digit("-");
+    // } else {
+      $scope.firstOperand = +$scope.result;
+      $scope.operator = type;
+    // }
   }
 
   $scope.adv = function(type) {
@@ -79,6 +93,7 @@ angular.module('starter', ['ionic'])
         $scope.result = (Math.arctan(+$scope.result)).toString();
         break;
     }
+    $scope.round();
   }
 
   $scope.clear = function() {
@@ -106,6 +121,27 @@ angular.module('starter', ['ionic'])
         break;
     }
     $scope.equaled = true;
+    $scope.round();
+  }
+
+  $scope.round = function() {
+    var num = +$scope.result;
+    if (num >= 1) {
+      num = num.toPrecision(10);
+      if (num.length > 11) {
+        num = (+num).toPrecision(5);
+      } else {
+        num = num % 1 === 0 ? (+num).toFixed() : num;
+      }
+    } else if (num >= 0) {
+      num = num.toPrecision(9);
+    } else if (num > -1) {
+      num = num.toPrecision(8);
+    } else {
+      num = num.toPrecision(9);
+    }
+    $scope.result = num;
+    // $scope.result = num % 1 === 0 ? (+num).toFixed() : +num;
   }
 
 }]);
