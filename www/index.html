@@ -32,19 +32,19 @@
           <div class="col result" ng-model="result">{{result}}</div>
         </div>
         <div class="row">
-          <div class="col button sqr" ng-click="sqr(true)">x<sup>2</sup></div>
-          <div class="col button trig" ng-click="trig('sin', true)">sin</div>
-          <div class="col button trig" ng-click="trig('cos', true)">cos</div>
-          <div class="col button trig" ng-click="trig('tan', true)">tan</div>
+          <div class="col button sqr" ng-click="adv('sqr')">x<sup>2</sup></div>
+          <div class="col button trig" ng-click="adv('sin')">sin</div>
+          <div class="col button trig" ng-click="adv('cos')">cos</div>
+          <div class="col button trig" ng-click="adv('tan')">tan</div>
         </div>
         <div class="row">
-          <div class="col button sqrt" ng-click="sqr(false)">
+          <div class="col button sqrt" ng-click="adv('sqrt')">
             <div class="sqrt-left">√</div>
             <div class="sqrt-right">&nbsp;x&nbsp;</div>
           </div>
-          <div class="col button trig" ng-click="trig('sin', false)">sin<sup>-1</sup></div>
-          <div class="col button trig" ng-click="trig('cos', false)">cos<sup>-1</sup></div>
-          <div class="col button trig" ng-click="trig('tan', false)">tan<sup>-1</sup></div>
+          <div class="col button trig" ng-click="adv('asin')">sin<sup>-1</sup></div>
+          <div class="col button trig" ng-click="adv('acos')">cos<sup>-1</sup></div>
+          <div class="col button trig" ng-click="adv('atan')">tan<sup>-1</sup></div>
         </div>
         <div class="row">
           <div class="col button num" ng-click="digit(1)">1</div>

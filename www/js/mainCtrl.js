@@ -4,6 +4,7 @@ angular.module('starter', ['ionic'])
 
   $scope.result = "0";
   $scope.secondOperandStarted = false;
+  $scope.equaled = false;
 
   $scope.firstOperand;
   $scope.operator;
@@ -51,6 +52,35 @@ angular.module('starter', ['ionic'])
     $scope.operator = type;
   }
 
+  $scope.adv = function(type) {
+    switch (type) {
+      case "sqr":
+        $scope.result = (+$scope.result * +$scope.result).toString();
+        break;
+      case "sqrt":
+        $scope.result = (Math.sqrt(+$scope.result)).toString();
+        break;
+      case "sin":
+        $scope.result = (Math.sin(+$scope.result)).toString();
+        break;
+      case "cos":
+        $scope.result = (Math.cos(+$scope.result)).toString();
+        break;
+      case "tan":
+        $scope.result = (Math.tan(+$scope.result)).toString();
+        break;
+      case "asin":
+        $scope.result = (Math.arcsin(+$scope.result)).toString();
+        break;
+      case "acos":
+        $scope.result = (Math.arccos(+$scope.result)).toString();
+        break;
+      case "atan":
+        $scope.result = (Math.arctan(+$scope.result)).toString();
+        break;
+    }
+  }
+
   $scope.clear = function() {
     $scope.result = "0";
     $scope.secondOperandStarted = false;
@@ -75,6 +105,7 @@ angular.module('starter', ['ionic'])
         $scope.result = ($scope.firstOperand * $scope.secondOperand).toString();
         break;
     }
+    $scope.equaled = true;
   }
 
 }]);
